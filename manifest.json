@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "Dogear",
+    "version": "1.0",
+
+    "description": "A single place to store webpages to read.",
+    "author": "Julian Herbert",
+    
+    "icons": {
+        "48": "x48.png"
+    },
+    
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "storage"
+    ],
+
+    "browser_action": {
+        "default_icon": "x32.png",
+        "default_title": "Dogear",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["worker.js"]
+        }
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "dogear@jweled.net"
+        }
+    }
+}
